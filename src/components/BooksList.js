@@ -5,27 +5,27 @@ import hash from 'object-hash';
 
 export default class BooksList extends Component {
 
-    render () {
-        return (
-            <ol className="books-grid">
-                {
-                    this.props.books.map(book => {
-                        return (
-                            <li key={hash(book)}>
-                                <Book 
-                                    book={book} 
-                                    moveShelfsBook={this.props.moveShelfsBook}
-                                />
-                            </li>
-                        )
-                    })   
-                }
-            </ol>
-        )
-    }
+	render () {
+		return (
+			<ol className="books-grid">
+				{
+					this.props.books.map(book => {
+						return (
+							<li key={hash(book)}>
+								<Book 
+									book={book} 
+									moveShelfsBook={this.props.moveShelfsBook}
+								/>
+							</li>
+						)
+					})   
+				}
+			</ol>
+		)
+	}
 }
 
 BooksList.propTypes = {
-    books: PropTypes.array.isRequired,
-    moveShelfsBook: PropTypes.func.isRequired
+	books: PropTypes.array.isRequired,
+	moveShelfsBook: PropTypes.func.isRequired
 };

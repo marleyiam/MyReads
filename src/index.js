@@ -7,10 +7,10 @@ import './components/interceptor/xhrInterceptor';
 import ThemeSwitcher from './components/theme-switcher/ThemeSwitcher';
 
 ReactDOM.render(
-    <BrowserRouter>
-      <ThemeSwitcher defaultTheme='light'>
-        <App />
-      </ThemeSwitcher>
-    </BrowserRouter>, 
-    document.getElementById('root')
+  <BrowserRouter>
+    <ThemeSwitcher defaultTheme='light'>
+      <App />
+    </ThemeSwitcher>
+  </BrowserRouter>, 
+  document.getElementById('root')
 );
