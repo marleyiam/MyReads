@@ -12,7 +12,7 @@ class BooksApp extends Component {
   }
 
   updateBooks = async () => {
-    let books = await BooksAPI.getAll()
+    let books = await BooksAPI.getAll();
     const shelfs = [...new Set(books.map(book => book.shelf))];
     this.setState({shelfs: shelfs, books: books});
   }
