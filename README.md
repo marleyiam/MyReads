@@ -1,5 +1,28 @@
 # MyReads Project
 
+This is my shot in order to accomplish the "MyReads" project.
+In this one, I choose some libraries to handle some specific issues:
+ - object-hash: Finding an appropriate key to React's lists sometimes can be trick and hashing a object helps in this process.
+ - prop-types: This is a well known React library and helps in keep your 
+ Component's contructors spot on.
+ - react-debounce-input: This one is pretty useful to avoid excessive triggering while typing into search inputs texts.
+ - react-router-dom: Another mandatory React library. Handles url routing and much more.
+ - xhook: Allows to intercept XHR requests;
+
+My approach in this challenge was to make things simple and clear as possible, avoiding unnecessary complexity by keeping simple responsability and high cohesion to every component.
+
+Besides that I had some issues in mind while coding this source, for example:
+Must be aware that collection searching can be a quite expensive in terms of application performance.
+So, instead comparing two collections (potentially O(N^2)) everytime, my approach was using "dictionaries" (actually plain Javascript Objects) where I had a book title as a key and the book itself as value.
+By doing so, while iterating over a new book list I can get quickly (like O(1)) if this current new book is or is not contained into my previous book's list.
+
+I did some fancy extras just for fun.
+ - By using the xhook library I did a simple "interceptor" in order to handle a simple spinner loading while requesting.
+ - I did so called "ThemeSwitcher" component which uses a Slider toggable component. 
+ As it's name claims, you can shift into themes back and forth.
+In future I'll redo this using the React's Context API and make it smoother.
+
+
 This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
 
 Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
