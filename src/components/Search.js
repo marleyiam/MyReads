@@ -38,7 +38,7 @@ export default class Search extends Component {
 
     BooksAPI.search(query).then(books => {
 
-      if (books === undefined || books.items && books.items.length === 0) return;
+      if ((books === undefined) || (books.items && books.items.length === 0)) return;
 
       let mappedBooksFromProps = this.mapBooksByTitle(this.props.books);
       let mappedBooksFromService = this.mapBooksByTitle(books);

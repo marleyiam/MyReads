@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class ThemeSwitcher extends Component {
 
   state = {
-      theme: ''
+    theme: ''
   }
 
   stylesheetPromises = [];
@@ -46,10 +46,6 @@ export default class ThemeSwitcher extends Component {
     });
   }
 
-  componentWillMount() {
-    this.stylesheetPromises = [];
-  }
-
   setTheme(theme) {
     let url = `${theme}.css`;
 
@@ -59,12 +55,12 @@ export default class ThemeSwitcher extends Component {
 
   this.stylesheetPromises
     .forEach((p) => {
-    p.then((link) => {
-        this.setState({
-          theme: theme
+      p.then((link) => {
+          this.setState({
+            theme: theme
+          });
         });
       });
-    });
   }
 
   componentWillUnmount() {
